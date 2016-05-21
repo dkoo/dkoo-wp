@@ -5,4 +5,6 @@ composer.lock
 phpunit.xml
 .idea
 .DS_Store
-assets/*/*.min.*
+.map
+assets/css/*.css
+assets/js/*.js
