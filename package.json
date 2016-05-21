@@ -1,50 +1,37 @@
 {
-  "name": "generator-wp-make",
-  "version": "0.4.1",
-  "description": "Yeoman generator",
-  "license": "MIT",
-  "main": "app/index.js",
+  "name": "dkoo-dot-net",
+  "title": "dkoo dot net",
+  "description": "dkoo dot net...in WordPress!",
+  "version": "0.1.0",
+  "homepage": "http://dkoo.net",
   "repository": {
     "type": "git",
-    "url": "https://github.com/10up/generator-wp-make.git"
+    "url": ""
   },
   "author": {
-    "name": "Luke Woodward",
-    "email": "woodward.lucas@gmail.com",
-    "url": "https://github.com/lkwdwrd"
-  },
-  "contributors": [
-    {
-      "name": "Luke Woodward",
-      "email": "woodward.lucas@gmail.com",
-      "url": "https://github.com/lkwdwrd"
-    },
-    {
-      "name": "Eric Mann",
-      "email": "eric@eamann.com",
-      "url": "https://eamann.com"
-    }
-  ],
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "app"
-  ],
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "dependencies": {
-    "chalk": "~1.1.1",
-    "lodash": "~3.10.1",
-    "yeoman-generator": "~0.20.3",
-    "yo-profile": "^1.0.0"
+    "name": "Derrick Koo",
+    "email": "d@dkoo.net",
+    "url": "https://github.com/dkoo"
   },
   "devDependencies": {
-    "mocha": "*",
-    "async": "^1.4.2"
-  }
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-sass": "^1.0.0",
+    "autoprefixer": "^6.0.0",
+    "grunt-postcss": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-phpunit": "^0.3.6",
+    "load-grunt-config": "~0.17.2",
+    "load-grunt-tasks": "^3.3.0",
+    "glob": "~5.0.15",
+    "chai": "^3.5.0",
+    "grunt-mocha": "^1.0.0"
+  },
+  "keywords": []
 }
