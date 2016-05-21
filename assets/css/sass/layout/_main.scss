@@ -11,10 +11,6 @@ a {
 		color: #C5D5E4;
 	}
 }
-#__blaze-root {
-	height: 100%;
-	overflow-y: hidden;
-}
 
 .container {
 	height: 100%;
@@ -27,5 +23,27 @@ a {
 			line-height: 1.25em;
 			text-transform: uppercase;
 		}
+	}
+	a.pull,
+	a.back {
+		box-sizing: border-box;
+		display: block;
+		font-size: 1.5em;
+		padding: 0.5em;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		color: #C5D5E4;
+		&:hover {
+			color: #8896AB;
+			font-size: 1.75em;
+		}
+	}
+	&.intro a.pull {
+		bottom: 0;
+	}
+	&.blog a.pull,
+	&.blog a.back {
+		top: 0.25em;
 	}
 }

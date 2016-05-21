@@ -155,50 +155,6 @@ select {
     border-radius: 50%;
     animation: spCircRot .75s infinite linear; }
 
-.container {
-  /* autoprefixer: off */
-  perspective: 2500px;
-  transform-style: preserve-3d; }
-  .container section {
-    /* autoprefixer: on */
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    position: relative;
-    transition: transform 0.75s cubic-bezier(0.5, 0.25, 0.25, 0.5), background-color 0.75s cubic-bezier(0.25, 0.5, 0.5, 0.25), color 0.75s cubic-bezier(0.25, 0.5, 0.5, 0.25), opacity 0.75s cubic-bezier(0.25, 0.5, 0.5, 0.25); }
-    .container section.intro {
-      background-color: white;
-      transform-origin: 0 100%;
-      text-align: center; }
-    .container section.blog {
-      opacity: 0;
-      pointer-events: none;
-      transform-origin: 0 0; }
-    .container section a.pull,
-    .container section a.back {
-      box-sizing: border-box;
-      display: block;
-      font-size: 1.5em;
-      padding: 0.5em;
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      color: #C5D5E4; }
-      .container section a.pull:hover,
-      .container section a.back:hover {
-        color: #8896AB;
-        font-size: 1.75em; }
-    .container section.intro a.pull {
-      bottom: 0; }
-    .container section.blog a.pull,
-    .container section.blog a.back {
-      top: 0.25em; }
-  .container.blog .intro {
-    opacity: 0;
-    pointer-events: none; }
-  .container.blog .blog {
-    opacity: 1;
-    pointer-events: all; }
-
 body {
   font-family: "Crimson Text", Times, serif;
   font-size: 18px;
@@ -210,10 +166,6 @@ a {
   a:hover {
     color: #C5D5E4; }
 
-#__blaze-root {
-  height: 100%;
-  overflow-y: hidden; }
-
 .container {
   height: 100%;
   position: relative; }
@@ -224,6 +176,25 @@ a {
       font-size: 2em;
       line-height: 1.25em;
       text-transform: uppercase; }
+  .container a.pull,
+  .container a.back {
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.5em;
+    padding: 0.5em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: #C5D5E4; }
+    .container a.pull:hover,
+    .container a.back:hover {
+      color: #8896AB;
+      font-size: 1.75em; }
+  .container.intro a.pull {
+    bottom: 0; }
+  .container.blog a.pull,
+  .container.blog a.back {
+    top: 0.25em; }
 
 html,
 body.home {
@@ -233,61 +204,58 @@ body.home {
   overflow-y: auto;
   box-sizing: border-box; }
 
-section.intro::after,
-section.intro div {
-  display: inline-block;
-  vertical-align: middle; }
-
-section.intro::after {
-  content: '';
-  height: 100%; }
-
-section.intro div {
-  max-width: 98%;
+section.intro {
   text-align: center; }
-  section.intro div.not-found {
-    box-sizing: border-box;
-    padding: 1em; }
-    section.intro div.not-found p + p {
-      margin-top: 1.5em; }
-  section.intro div h1 {
+  section.intro::after,
+  section.intro div {
+    display: inline-block;
+    vertical-align: middle; }
+  section.intro::after {
+    content: '';
+    height: 100%; }
+  section.intro div {
+    max-width: 98%;
+    text-align: center; }
+    section.intro div.not-found {
+      box-sizing: border-box;
+      padding: 1em; }
+      section.intro div.not-found p + p {
+        margin-top: 1.5em; }
+  section.intro h1 {
     font-size: 2.5em;
     font-weight: 400;
     line-height: 1em;
     margin-bottom: 0.25em; }
-    section.intro div h1 a {
+    section.intro h1 a {
       color: black; }
-      section.intro div h1 a:hover {
+      section.intro h1 a:hover {
         color: #8896AB;
         font-size: 1.1em; }
-  section.intro div ul li {
+  section.intro li {
     display: inline-block;
     font-size: 1em; }
-    section.intro div ul li a {
+    section.intro li a {
       display: block;
       padding: 0.75em;
       color: black; }
-      section.intro div ul li a i {
+      section.intro li a i {
         backface-visibility: hidden;
         transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.25s cubic-bezier(0.25, 0.1, 0.25, 1); }
-      section.intro div ul li a:hover i {
+      section.intro li a:hover i {
         transform: translateY(-0.12em);
         color: #8896AB; }
+  section.intro .pull {
+    bottom: 0; }
+
+body.blog {
+  background-color: #1e2124; }
 
 section.blog {
-  background-color: #1e2124;
-  color: white;
-  perspective: 2500px;
-  -webkit-perspective: none; }
+  color: white; }
   section.blog > div {
     /* autoprefixer: on */
     padding-bottom: 3em;
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out; }
+    box-sizing: border-box; }
     section.blog > div.posts {
       padding-top: 4em;
       position: relative; }
@@ -310,18 +278,15 @@ section.blog {
       color: #222;
       min-height: 100%;
       padding: 0 1.5em;
-      position: absolute;
       width: 100%;
       height: 100%;
       overflow-x: hidden;
       top: 0;
-      transform: rotateY(180deg);
       z-index: -1; }
       section.blog > div.single article {
         opacity: 0;
         padding: 4em 0; }
   section.blog.post div.posts {
-    transform: rotateY(-180deg);
     z-index: -1; }
     section.blog.post div.posts article {
       opacity: 0; }

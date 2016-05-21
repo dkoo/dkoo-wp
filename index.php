@@ -8,15 +8,15 @@
 
 get_header(); ?>
 
-	<!-- <?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ): the_post(); ?>
-			<h2><?php the_title(); ?></h2>
-			<?php the_content(); ?>
-		<?php endwhile; ?>
-	<?php endif; ?> -->
+	<?php // if ( have_posts() ) : ?>
+		<?php // while ( have_posts() ): the_post(); ?>
+			<!-- <h2><?php //the_title(); ?></h2> -->
+			<?php // the_content(); ?>
+		<?php // endwhile; ?>
+	<?php // endif; ?>
 
 	<main class="container blog">
-		<section class="blog {{#if singlePost}}post{{/if}}">
+		<section class="blog">
 			<div class="posts">
 				<a class="back" href="/"><i class="fa fa-angle-double-up"></i></a>
 				<a class="search" href="#"><i class="fa fa-search-minus"></i></a>

@@ -1,17 +1,21 @@
-section.blog {
+body.blog {
 	background-color: #1e2124;
+}
+
+section.blog {
+	// background-color: #1e2124;
 	color: white;
-	perspective: 2500px;
-	-webkit-perspective: none;
+	// perspective: 2500px;
+	// -webkit-perspective: none;
 	& > div {
 		/* autoprefixer: on */
 		padding-bottom: 3em;
-		backface-visibility: hidden;
+		// backface-visibility: hidden;
 		box-sizing: border-box;
-		height: 100%;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-		transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+		// height: 100%;
+		// overflow-y: auto;
+		// -webkit-overflow-scrolling: touch;
+		// transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
 		&.posts {
 			padding-top: 4em;
 			position: relative;
@@ -42,12 +46,12 @@ section.blog {
 			color: #222;
 			min-height: 100%;
 			padding: 0 1.5em;
-			position: absolute;
+			// position: absolute;
 			width: 100%;
 			height: 100%;
 			overflow-x: hidden;
 			top: 0;
-			transform: rotateY(180deg);
+			// transform: rotateY(180deg);
 			z-index: -1;
 			article {
 				opacity: 0;
@@ -57,7 +61,7 @@ section.blog {
 	}
 	&.post {
 		div.posts {
-			transform: rotateY(-180deg);
+			// transform: rotateY(-180deg);
 			z-index: -1;
 			article {
 				opacity: 0;
