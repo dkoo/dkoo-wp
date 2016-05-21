@@ -9,5 +9,7 @@
 ( function( window, undefined ) {
 	'use strict';
 
+	let message = 'js loaded';
 
+	console.log(message);
 } )( this );

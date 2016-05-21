@@ -33,5 +33,9 @@
     "chai": "^3.5.0",
     "grunt-mocha": "^1.0.0"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "grunt-babel": "^6.0.0"
+  }
 }
