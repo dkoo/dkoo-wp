@@ -12,9 +12,14 @@
 		<div class="posts">
 			<a class="back" href="/"><i class="fa fa-angle-double-up"></i></a>
 			<a class="search" href="#"><i class="fa fa-search"></i></a>
-			<!-- {{#if searching}} -->
-			<?php // get_template_part('partials/search'); ?>
-			<!-- {{/if}} -->
+			<?php get_template_part('partials/search'); ?>
+
+			<?php if ( is_tag( $tag ) ) : 
+					$posts_page_id = get_option( 'page_for_posts' );
+					$posts_page_url = get_page_uri( $posts_page_id );
+				?>
+				<p class="tag-label"><em>Showing posts with tag <?php single_tag_title() ?> (<a href="/<?php echo $posts_page_url ?>">show all posts</a>)</em></p>
+			<?php endif ?>
 
 			<!-- The loop. -->
 			<?php if ( have_posts() ) : ?>
@@ -23,14 +28,14 @@
 					<?php get_template_part('partials/listing') ?>
 				<?php endwhile; ?>
 			<?php else : ?>
-				<article class="excerpt">
-					<p><em>No posts found.</em></p>
-				</article>
+				<?php get_template_part('partials/noposts') ?>
 			<?php endif; ?>
 
-			<?php if ( $wp_query->post_count < $wp_query->found_posts ) : ?>
-				<a id="js-more" class="more" href="<?php echo get_next_posts_page_link() ?>">more</a>
-			<?php endif ?>
+			<!-- Show "more" link only if there are more posts to show -->
+			<a id="js-more" class="more 
+				<?php if ( ($wp_query->post_count = $wp_query->found_posts) ) : ?>
+						hidden
+					<?php endif ?>" href="<?php echo get_next_posts_page_link() ?>">more</a>
 		</div>
 	</section>
 </main>

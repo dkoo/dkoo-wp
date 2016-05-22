@@ -32,6 +32,8 @@ TenUp\dkoodot_net\Core\setup();
 // add actions
 add_action( 'wp_ajax_nopriv_fetch_posts', 'dkoo_fetch_posts' );
 add_action( 'wp_ajax_fetch_posts', 'dkoo_fetch_posts' );
+add_action( 'wp_ajax_nopriv_search_posts', 'dkoo_search_posts' );
+add_action( 'wp_ajax_search_posts', 'dkoo_search_posts' );
 
 // fetch posts for ajax request
 function dkoo_fetch_posts() {
@@ -47,5 +49,26 @@ function dkoo_fetch_posts() {
 			get_template_part( 'partials/listing', get_post_format() );
 		}
 	}
+
+	die();
+}
+
+// search posts for ajax request
+function dkoo_search_posts() {
+	$query_vars = json_decode( stripslashes( $_GET['query_vars'] ), true );
+
+	$query_vars['post_type'] = 'post';
+
+	$posts = new WP_Query( $query_vars );
+
+	if( !$posts->have_posts() ) {
+		 get_template_part( 'partials/noposts', 'none' );
+	} else {
+		while ( $posts->have_posts() ) {
+			$posts->the_post();
+			get_template_part( 'partials/listing', get_post_format() );
+		}
+	}
+
 	die();
 }

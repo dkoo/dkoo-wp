@@ -12,10 +12,13 @@ get_header(); ?>
 		<section class="blog post">
 			<div class="single">
 				<?php
+					$posts_page_id = get_option( 'page_for_posts' );
+					$posts_page_url = get_page_uri( $posts_page_id );
+
 					// Start the loop.
 					while ( have_posts() ) : the_post(); ?>
 						<article>
-							<a class="back" href="/blog"><i class="fa fa-angle-double-left"></i></a>
+							<a class="back" href="/<?php echo $posts_page_url ?>"><i class="fa fa-angle-double-left"></i></a>
 							<header>
 								<h2><?php the_date(); ?></h2>
 							</header><div>

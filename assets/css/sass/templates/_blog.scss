@@ -35,7 +35,7 @@ section.blog {
 				color: white;
 				&:hover {
 					color: #8896AB;
-					font-size: 125%;
+					transform: scale(1.2);
 				}
 			}
 			.action {
@@ -104,6 +104,7 @@ section.blog {
 			display: block;
 			padding-left: 0;
 			text-align: left;
+			transform-origin: 0 0 0;
 			&.static {
 				pointer-events: none;
 			}
@@ -264,7 +265,27 @@ section.blog {
 		max-width: 960px;
 		padding: 2em 0 1em 0;
 		text-align: center;
-		text-transform: uppercase;
+		text-transform: uppercase; 
+		&.loading {
+			padding-top: 0;
+			text-indent: -9999px;
+			&::after {
+				@include loading();
+				border-color: rgba(255, 255, 255, 0.25);
+				border-top-color: white;
+				margin: auto;
+			}
+		}
+		&.hidden {
+			padding: 0;
+			visibility: hidden;
+		}
+	}
+	.tag-label {
+		box-sizing: border-box;
+		margin: auto;
+		padding: 27px;
+		max-width: 960px;
 	}
 }
 
