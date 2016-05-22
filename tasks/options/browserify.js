@@ -1,9 +1,8 @@
 module.exports = {
-	options: {
-		sourceMap: true,
-		presets: ['es2015']
-	},
 	dist: {
+		options: {
+			transform: [ ["babelify", { "presets": ["es2015"] }] ]
+		},
 		files: {
 			'assets/js/dkoo-dot-net.js': 'assets/js/src/dkoo-dot-net.js'
 		}

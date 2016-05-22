@@ -63,6 +63,17 @@ function scripts() {
 		DKOO_VERSION,
 		true
 	);
+
+	global $wp_query;
+	wp_localize_script(
+		'dkoo',
+		'dkoo_ajax',
+		array(
+			'url' => admin_url( 'admin-ajax.php'),
+			'query_vars' => json_encode( $wp_query->query ),
+			'total' => $wp_query->found_posts
+		)
+	);
 }
 
 /**

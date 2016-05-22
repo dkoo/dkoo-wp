@@ -1,5 +1,8 @@
-body.blog {
-	background-color: #1e2124;
+body {
+	&.blog,
+	&.archive {
+		background-color: #1e2124;
+	}
 }
 
 section.blog {

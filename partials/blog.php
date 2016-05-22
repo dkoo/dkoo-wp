@@ -20,17 +20,7 @@
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ): the_post(); ?>
 					<!-- post excerpt -->
-					<article class="excerpt">
-						<a name="<?php the_id(); ?>" href="<?php the_permalink() ?>">
-							<header>
-								<h2><?php the_date(); ?></h2>
-							</header><div>
-								<h1><?php the_title(); ?></h1>
-								<?php the_excerpt(); ?>
-							</div>
-						</a>
-						<?php the_tags( '<ul class="tags"><li>', '</li><li>', '</li></ul>' ); ?>
-					</article>
+					<?php get_template_part('partials/listing') ?>
 				<?php endwhile; ?>
 			<?php else : ?>
 				<article class="excerpt">
@@ -38,7 +28,9 @@
 				</article>
 			<?php endif; ?>
 
-			<a class="more" href="#">more</a>
+			<?php if ( $wp_query->post_count < $wp_query->found_posts ) : ?>
+				<a id="js-more" class="more" href="<?php echo get_next_posts_page_link() ?>">more</a>
+			<?php endif ?>
 		</div>
 	</section>
 </main>
