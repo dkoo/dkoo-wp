@@ -56,7 +56,7 @@ function scripts() {
 	$debug = apply_filters( 'dkoo_script_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	if ( is_home() ) {
+	if ( is_home() || is_archive() ) {
 		wp_enqueue_script(
 			'dkoo',
 			DKOO_TEMPLATE_URL . "/assets/js/dkoo-dot-net{$min}.js",
