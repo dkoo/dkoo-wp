@@ -16,9 +16,6 @@ let utils = require('./utils.js');
 	let posts = posts || document.querySelector('.posts'); // posts container
 
 	if ( posts ) {
-		// hide more button if JS is enabled
-		document.querySelector('.more').classList.add('hidden');
-
 		let moreBtn = moreBtn || document.querySelector('.more'), // more button
 			temp = temp || document.createElement('div'), // a temporary element for converting HTML string to elements
 			moreHandler = utils.debounce(() => {
@@ -27,6 +24,9 @@ let utils = require('./utils.js');
 				}
 
 			}, 250);
+
+		// hide more button if JS is enabled
+		moreBtn.classList.add('hidden');
 
 		// send a fetch request to the fetch_posts WP action
 		let fetchPosts = function() {
