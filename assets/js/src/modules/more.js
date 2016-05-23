@@ -22,11 +22,12 @@ let utils = require('./utils.js');
 		let moreBtn = moreBtn || document.querySelector('.more'), // more button
 			temp = temp || document.createElement('div'), // a temporary element for converting HTML string to elements
 			moreHandler = utils.debounce(() => {
+				console.log('scrolling');
 				if ( window.innerHeight + document.body.scrollTop >= document.body.scrollHeight - 50 ) {
 					fetchPosts();
 				}
 
-			}, 25);
+			}, 250);
 
 		// send a fetch request to the fetch_posts WP action
 		let fetchPosts = function() {

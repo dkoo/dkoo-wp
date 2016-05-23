@@ -36,9 +36,10 @@ section.intro {
 		margin-bottom: 0.25em;
 		a {
 			color: black;
+			display: block;
 			&:hover {
 				color: #8896AB;
-				font-size: 1.1em;
+				transform: scale(1.1);
 			}
 		}
 	}
