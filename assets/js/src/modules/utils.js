@@ -1,3 +1,11 @@
+/**
+ *
+ * useful util methods
+ *
+ * Copyright (c) 2016 Derrick Koo
+ * Licensed under the GPL-2.0+ license.
+ */
+
 // do not execute func unless it has not been exeucted in at least delay ms
 module.exports = {
 	debounce: (func, delay, immediate) => {

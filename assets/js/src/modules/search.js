@@ -1,3 +1,11 @@
+/**
+ *
+ * search posts via WP AJAX actions
+ *
+ * Copyright (c) 2016 Derrick Koo
+ * Licensed under the GPL-2.0+ license.
+ */
+
 // useful util methods
 let utils = require('./utils.js');
 
