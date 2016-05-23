@@ -22,7 +22,6 @@ let utils = require('./utils.js');
 		let moreBtn = moreBtn || document.querySelector('.more'), // more button
 			temp = temp || document.createElement('div'), // a temporary element for converting HTML string to elements
 			moreHandler = utils.debounce(() => {
-				console.log(window.innerHeight, window.scrollY, document.body.scrollHeight - 50);
 				if ( window.innerHeight + window.scrollY >= document.body.scrollHeight - 50 ) {
 					fetchPosts();
 				}
@@ -31,7 +30,6 @@ let utils = require('./utils.js');
 
 		// send a fetch request to the fetch_posts WP action
 		let fetchPosts = function() {
-			console.log('fetching');
 			let offset = posts.querySelectorAll('article').length || 10;
 
 			// show loading animation
